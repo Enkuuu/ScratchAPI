@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+body {
+    text-align: center;
+    background-color: rgb(91,168, 240);
+}
+
+img {
+    width: 400px;
+    border: 2px solid rgb(91, 168, 240);
+    cursor: pointer;
+}
+
+h1{
+    margin: 100px;
+}
+
+input{
+    padding: 10px;
+    border: none;
+}
+
+.game{
+    box-shadow: 2px 2px 8px grey;
+    margin: 50px;
+    background-color: white;
+    padding: 20px;
+}
