@@ -15,6 +15,12 @@ function showResults(data){
 
 function buildProject(project){
     let newTitle = makeElement('h2', 'title', project.title);
+    let viewCount = makeElement('p', undefined, 'Views: '+ project.stats.views)
+    let imageContainer = makeElement();
+    let newImage = makeElement('img');
+    newImage.src = project.image;
+    let newGame = makeElement('div', 'game');
+    
 }
 
 function makeElement(type='div', newClass, inner = ''){
