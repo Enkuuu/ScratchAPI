@@ -3,11 +3,17 @@ function search(that){
     .then(function(response){
         return response.json()
     }) .then(function(data){
+        if(data.lengrth > 0){
+            showResults(data)
+        }else{
+            notFound()
+        }
         showResults(data)
     })
 }
 
 function showResults(data){
+    document.getElementById('games').innerHTML = ''
     data.forEach(function(project){
         buildProject(project)
     })
@@ -19,6 +25,9 @@ function buildProject(project){
     let imageContainer = makeElement();
     let newImage = makeElement('img');
     newImage.src = project.image;
+    newImage.onclick = function(){
+        playGame(project.id, imageContainer)
+    }
     let newGame = makeElement('div', 'game');
     imageContainer.append(newImage);
     newGame.append(newTitle);
@@ -34,4 +43,12 @@ function makeElement(type='div', newClass, inner = ''){
     }
     newEl.innerHTML = inner;
     return newEl;
+}
+
+function notFound(){
+    document.getElementById('games').innerHTML = 'No User Found'
+}
+
+function playGame(id, container){
+    container.innerHTML="<iframe src='https://scratch.mit.edu/projects/" + id + "/embed' allowtransparency='true' width='485' height='492' frameborder='0' scrolling ='no' allowfullscreen></iframe>";
 }
