@@ -20,7 +20,11 @@ function buildProject(project){
     let newImage = makeElement('img');
     newImage.src = project.image;
     let newGame = makeElement('div', 'game');
-    
+    imageContainer.append(newImage);
+    newGame.append(newTitle);
+    newGame.append(imageContainer);
+    newGame.append(viewCount);
+    document.getElementById('games').append(newGame)
 }
 
 function makeElement(type='div', newClass, inner = ''){
